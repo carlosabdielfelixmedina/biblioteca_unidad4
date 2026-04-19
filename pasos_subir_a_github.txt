@@ -1,0 +1,73 @@
+PASOS PARA SUBIR MI PROYECTO A GITHUB
+Usuario GitHub: carlosabdielfelixmedina
+
+1) ABRIR TERMINAL EN LA CARPETA DEL PROYECTO
+- Ubicate en la carpeta raiz del proyecto (donde esta manage.py).
+
+2) CONFIGURAR IDENTIDAD DE GIT (SOLO LA PRIMERA VEZ)
+- git config --global user.name "Carlos Abdiel Felix Medina"
+- git config --global user.email "TU_CORREO_DE_GITHUB"
+
+3) INICIALIZAR REPOSITORIO (SI TODAVIA NO EXISTE)
+- git init
+
+4) CREAR ARCHIVO .gitignore (RECOMENDADO)
+Agregar al .gitignore al menos estas lineas:
+
+biblioteca_env/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.env
+.vscode/
+.idea/
+db.sqlite3
+*.log
+
+5) AGREGAR ARCHIVOS Y HACER PRIMER COMMIT
+- git add .
+- git commit -m "Primer commit: proyecto biblioteca"
+
+6) CREAR REPOSITORIO EN GITHUB
+- Entrar a: https://github.com/new
+- Owner/usuario: carlosabdielfelixmedina
+- Nombre sugerido: biblioteca_unidad4
+- No marcar README, .gitignore ni licencia si ya tienes archivos locales.
+- Crear repositorio.
+
+7) CONECTAR REPOSITORIO LOCAL CON GITHUB
+(Usa la URL HTTPS que te da GitHub)
+- git remote add origin https://github.com/carlosabdielfelixmedina/biblioteca_unidad4.git
+
+Si ya existe origin:
+- git remote set-url origin https://github.com/carlosabdielfelixmedina/biblioteca_unidad4.git
+
+8) SUBIR RAMA PRINCIPAL
+Si tu rama se llama master:
+- git branch -M main
+
+Subir:
+- git push -u origin main
+
+9) PARA ACTUALIZACIONES FUTURAS
+- git add .
+- git commit -m "Descripcion de cambios"
+- git push
+
+10) SI GITHUB PIDE AUTENTICACION
+- Usa tu usuario: carlosabdielfelixmedina
+- Como contrasena, usa un Personal Access Token (PAT), no tu password normal.
+- Crea token en: GitHub > Settings > Developer settings > Personal access tokens.
+
+11) VERIFICAR QUE SE SUBIO
+- Abre: https://github.com/carlosabdielfelixmedina/biblioteca_unidad4
+- Revisa que aparezcan tus archivos.
+
+COMANDOS RAPIDOS (RESUMEN)
+- git init
+- git add .
+- git commit -m "Primer commit"
+- git branch -M main
+- git remote add origin https://github.com/carlosabdielfelixmedina/biblioteca_unidad4.git
+- git push -u origin main
