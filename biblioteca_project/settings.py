@@ -26,7 +26,11 @@ SECRET_KEY = os.getenv('DJANGO_SECRET_KEY', 'django-insecure-dev-only-change-me'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    '127.0.0.1',
+    'localhost',
+    'felixmedinabackend.pythonanywhere.com',
+]
 
 
 # Application definition
@@ -124,10 +128,10 @@ CHANNEL_LAYERS = {
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'biblioteca_uni4',
-        'USER': 'root',
-        'PASSWORD': '',  # ← Cambia esto a tu password de MySQL
-        'HOST': 'localhost',
+        'NAME': os.getenv('DB_NAME', 'biblioteca_uni4'),
+        'USER': os.getenv('DB_USER', 'root'),
+        'PASSWORD': os.getenv('DB_PASSWORD', ''),
+        'HOST': os.getenv('DB_HOST', 'localhost'),
         'PORT': '3306',
         'OPTIONS': {
             'charset': 'utf8mb4',
@@ -171,6 +175,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
